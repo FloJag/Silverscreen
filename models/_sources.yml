@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: silverscreen
+    database: silverscreen
+    schema: public 
+    tables:
+      - name: invoices
+        description: movie rental costs for each film and location
+      - name: movie_catalogue
+        description: additional movie informations like title, rating and duration 
+      - name: nj_001
+        description: transactions for buying tickets and revenue of the first cinema
+      - name: nj_002
+        description: transactions for buying tickets and revenue of the second cinema
+      - name: nj_003
+        description: transactions for buying tickets and revenue of the third cinema
+   
