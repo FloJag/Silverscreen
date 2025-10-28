@@ -1,0 +1,76 @@
+models:
+  - name: stg_movie_catalogue
+    description: cleaned table movie catalogue
+    columns: 
+      - name: movie_id
+        description: unique indentifier for each movie
+        tests:
+          - not_null
+  - name: stg_invoices
+    description: cleaned and aggregated invoice table shows total_price by month
+    columns:
+      - name: movie_id
+        description: unique indentifier for each movie
+        tests:
+          - not_null
+      - name: total_price
+        description: total rental price for each movie and month
+        tests:
+          - not_null
+  - name: stg_nj_001
+    description: aggregated nj_001 table to display rev and tickets sold by month
+    columns:
+      - name: month
+        description: month in which the movie was played in a cinema
+        tests:
+          - not_null
+      - name: movie_id
+        description: unique indentifier for each movie
+        tests:
+          - not_null
+      - name: tickets_sold
+        description: amount of tickets were sold by month, cinema and movie
+        tests:
+          - not_null
+      - name: total_revenue
+        description: sum of revenue by month, cinema and movie
+        tests:
+          - not_null            
+  - name: stg_nj_002
+    description: aggregated nj_002 table to display rev and tickets sold by month
+    columns:
+      - name: month
+        description: month in which the movie was played in a cinema
+        tests:
+          - not_null
+      - name: movie_id
+        description: unique indentifier for each movie
+        tests:
+          - not_null
+      - name: tickets_sold
+        description: amount of tickets were sold by month, cinema and movie
+        tests:
+          - not_null
+      - name: total_revenue
+        description: sum of revenue by month, cinema and movie
+        tests:
+          - not_null        
+  - name: stg_nj_003
+    description: aggregated nj_003 table to display rev and tickets sold by month
+    columns:
+      - name: month
+        description: month in which the movie was played in a cinema
+        tests:
+          - not_null
+      - name: movie_id
+        description: unique indentifier for each movie
+        tests:
+          - not_null
+      - name: tickets_sold
+        description: amount of tickets were sold by month, cinema and movie
+        tests:
+          - not_null
+      - name: total_revenue
+        description: sum of revenue by month, cinema and movie
+        tests:
+          - not_null                

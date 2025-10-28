@@ -10,9 +10,9 @@ sources:
       - name: movie_catalogue
         description: additional movie informations like title, rating and duration 
       - name: nj_001
-        description: transactions for buying tickets and revenue of the first cinema
+        description: transactions for buying tickets and generated revenue of the first cinema
       - name: nj_002
-        description: transactions for buying tickets and revenue of the second cinema
+        description: transactions for buying tickets and generated revenue of the second cinema
       - name: nj_003
-        description: transactions for buying tickets and revenue of the third cinema
+        description: transactions for buying tickets and generated revenue of the third cinema
    
