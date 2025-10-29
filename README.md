@@ -34,8 +34,9 @@ These transformations ultimately feed into dashboards and reports for management
 ## 📈 Data Architecture Overview
 
 Below is the DAG (Directed Acyclic Graph) representing the data model dependencies within the dbt project.  
-![Silverscreen DAG](images/dag.png))
+<img src="images/DAG.png" width="800">
 
+---
 
 ## 🧩 Steps to Achieve the Goal
 
@@ -55,12 +56,21 @@ The project was executed in four structured phases within dbt:
 
 ---
 
-## 🏁 Project Execution & Results
+## 🏁 Project Execution
 
 At the end of the analysis, the dbt models produced a **monthly movie performance table** that summarized key metrics across all Silver Screen theaters.  
 This table serves as the foundation for BI dashboards and advanced profitability insights.
 
-You can visualize the analytical outcome here:  
-![Final Analysis Result](images/Mart_table.png)
+You can visualize the analytical outcome here: 
 
-![Final Analysis Result](images/Profitability.png)
+<img src="images/Mart_table.png" width="800">
+
+---
+
+## 🏆 The Final Result
+
+To bring all together, the final bar chart shows the profitability of each cinema. 
+None of them are profitable due to the high rental costs of each movie. 
+Cinema 3 has the highest gross margin from all of them.
+
+<img src="images/Profitability.png" width="800">
