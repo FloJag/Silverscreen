@@ -1,0 +1,215 @@
+models:
+  - name: stg_movie_catalogue
+    description: "table contains detailed information about movies released in 2024 and rented out by “Silver Screen"
+    columns: 
+      - name: movie_id
+        data_type: varchar
+        description: "unique indentifier for each movie"
+        tests:
+          - not_null
+
+      - name: movie_title
+        data_type: varchar
+        description: "The title of the movie"
+
+      - name: studio
+        data_type: varchar
+        description: "The production studio responsible for making the movie"
+
+      - name: genre
+        data_type: varchar
+        description: "The genre of the movie, describing the type of content"
+
+  - name: stg_invoices
+    description: "represents the invoices issued for showing a specific movie at various theater locations during different months. Data was passed by “Silver Screen” accountant"
+    columns:
+      - name: movie_id
+        data_type: varchar
+        description: "unique indentifier for each movie"
+        tests:
+          - not_null
+      - name: total_price
+        description: "total rental price for each movie per month, used min() to ensure that each movie is purchased only once per month by a cinema and to exclude anomalies."
+
+      - name: month
+        data_type: date
+        description: "The month in which the invoice was issued, in the format YYYY-MM-DD"
+
+      - name: location_id
+        data_type: varchar
+        description: "The identifier of the movie theater location, which is where the movie was shown"
+
+  - name: stg_nj_001
+    description: "aggregated nj_001 table to display all transactions of location 1"
+    columns:
+      - name: month
+        description: "month in which the movie was played in a cinema"
+        tests:
+          - not_null
+          
+      - name: movie_id
+        description: "unique indentifier for each movie"
+        tests:
+          - not_null
+
+      - name: tickets_sold
+        description: "amount of tickets were sold by month, cinema and movie"
+
+      - name: total_revenue
+        description: "sum of revenue by month, cinema and movie"
+
+      - name: location_id
+        data_type: varchar
+        description: "indentifier of the cinema n1, needed for later identification after union"
+
+  - name: stg_nj_002
+    description: "aggregated nj_002 table to display all transactions of location 2"
+    columns:
+      - name: month
+        description: "month in which the movie was played in a cinema"
+        tests:
+          - not_null
+
+      - name: movie_id
+        description: "unique indentifier for each movie"
+        tests:
+          - not_null
+
+      - name: tickets_sold
+        description: "amount of tickets were sold by month, cinema and movie"
+
+      - name: total_revenue
+        description: "sum of revenue by month, cinema and movie"
+
+      - name: location_id
+        data_type: varchar
+        description: "indentifier of the cinema n2, needed for later identification after union"
+  
+  - name: stg_nj_003
+    description: "aggregated nj_003 table to display all transactions of location 3"
+    columns:
+      - name: month
+        description: "month in which the movie was played in a cinema"
+        tests:
+          - not_null
+
+      - name: movie_id
+        description: "unique indentifier for each movie"
+        tests:
+          - not_null
+
+      - name: tickets_sold
+        description: "amount of tickets were sold by month, cinema and movie"
+
+      - name: total_revenue
+        description: "sum of revenue by month, cinema and movie"
+
+      - name: location_id
+        data_type: varchar
+        description: "indentifier of the cinema n3, needed for later identification after union"
+   
+
+  - name: int_monthly_rev
+    description: "union of all stg_nj models to combine all the sales in one table"
+    columns:
+      - name: month
+        data_type: date
+        description: "month in which the movie was played in the cinema"
+        tests:
+          - not_null
+
+      - name: movie_id
+        data_type: varchar
+        description: "unique identifier for each movie"
+        tests:
+          - not_null
+
+      - name: location_id
+        data_type: varchar
+        description: "identify in which cinema the movie was played"
+        tests:
+          - not_null
+
+      - name: tickets_sold
+        data_type: number
+        description: "amount of ticket were sold for that movie by month"
+
+      - name: total_revenue
+        data_type: number
+        description: "amount of revenue generated from tickets sales"
+
+  - name: int_movies
+    description: "additonal information about the movies and rental price"
+    columns:
+      - name: month
+        data_type: date
+        description: "month in which the movie was rented by the cinema"
+        tests:
+          - not_null
+
+      - name: movie_id
+        data_type: varchar
+        description: "unique identifier for each movie"
+        tests:
+          - not_null
+
+      - name: movie_title
+        data_type: varchar
+        description: "title of the movie"
+
+      - name: genre
+        data_type: varchar
+        description: "genre of the movie"
+
+      - name: location_id
+        data_type: varchar
+        description: "location in which the movie was played"
+        tests:
+          - not_null
+
+      - name: total_price
+        data_type: number
+        description: "total rental price the cinema payed for that movie by month"
+        
+  - name: mart_profitability
+    description: "shows the movies played in which location and month and how much revenue was generated from ticket sales. gross_margin shows profitablity"
+    columns:
+      - name: movie_id
+        data_type: varchar
+        description: "unique identifier of the movie"
+        tests:
+          - not_null
+
+      - name: movie_title
+        data_type: varchar
+        description: "titel of the movie"
+
+      - name: genre
+        data_type: varchar
+        description: "genre of the movie"
+
+      - name: month
+        data_type: date
+        description: "month in which the movie was played"
+        tests:
+          - not_null 
+
+      - name: location_id
+        data_type: varchar
+        description: "location in which the movie was played"
+
+      - name: tickets_sold
+        data_type: number
+        description: "total tickets sold for that movie by month and location"
+
+      - name: total_revenue
+        data_type: number
+        description: "total revenue generated from tickets sold"
+
+      - name: total_price
+        data_type: number
+        description: "total rental price the cinema payed for that movie in that month"
+
+      - name: gross_margin
+        data_type: number
+        description: "calculated: total price / total revenue - shows profitablity"
