@@ -14,5 +14,4 @@ sources:
       - name: nj_002
         description: "transactions for buying tickets and generated revenue of the second cinema"
       - name: nj_003
-        description: "transactions for buying tickets and generated revenue of the third cinema
-   "
+        description: "transactions for buying tickets and generated revenue of the third cinema"
