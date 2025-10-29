@@ -34,7 +34,7 @@ These transformations ultimately feed into dashboards and reports for management
 ## 📈 Data Architecture Overview
 
 Below is the DAG (Directed Acyclic Graph) representing the data model dependencies within the dbt project.  
-*(Insert your Excalidraw screenshot here — e.g., `![Silverscreen DAG](images/silverscreen_dag.png)`)*)
+![Silverscreen DAG](images/dag.png))
 
 
 ## 🧩 Steps to Achieve the Goal
@@ -53,8 +53,6 @@ The project was executed in four structured phases within dbt:
 4. **Schema, Tests & Jobs**  
    Implemented documentation, tests, and automation jobs to ensure data reliability and scalability.
 
-*(Visual reference: insert the provided image — e.g., `![Steps to Achieve the Goal](images/steps_to_goal.png)`)*)
-
 ---
 
 ## 🏁 Project Execution & Results
@@ -63,4 +61,6 @@ At the end of the analysis, the dbt models produced a **monthly movie performanc
 This table serves as the foundation for BI dashboards and advanced profitability insights.
 
 You can visualize the analytical outcome here:  
-*(Insert your final analysis graphic or dashboard screenshot — e.g., `![Final Analysis Result](images/final_result.png)`)*)
+![Final Analysis Result](images/Mart_table.png)
+
+![Final Analysis Result](images/Profitability.png)
