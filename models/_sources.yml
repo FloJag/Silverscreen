@@ -6,13 +6,13 @@ sources:
     schema: public 
     tables:
       - name: invoices
-        description: movie rental costs for each film and location
+        description: "movie rental costs for each film and location"
       - name: movie_catalogue
-        description: additional movie informations released in 2024
+        description: "additional movie informations released in 2024"
       - name: nj_001
-        description: transactions for buying tickets and generated revenue of the first cinema
+        description: "transactions for buying tickets and generated revenue of the first cinema"
       - name: nj_002
-        description: transactions for buying tickets and generated revenue of the second cinema
+        description: "transactions for buying tickets and generated revenue of the second cinema"
       - name: nj_003
-        description: transactions for buying tickets and generated revenue of the third cinema
-   
+        description: "transactions for buying tickets and generated revenue of the third cinema
+   "
