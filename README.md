@@ -61,8 +61,6 @@ The project was executed in four structured phases within dbt:
 At the end of the analysis, the dbt models produced a **monthly movie performance table** that summarized key metrics across all Silver Screen theaters.  
 This table serves as the foundation for BI dashboards and advanced profitability insights.
 
-You can visualize the analytical outcome here: 
-
 <img src="images/Mart_table.png" width="800">
 
 ---
