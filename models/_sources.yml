@@ -8,7 +8,7 @@ sources:
       - name: invoices
         description: movie rental costs for each film and location
       - name: movie_catalogue
-        description: additional movie informations like title, rating and duration 
+        description: additional movie informations released in 2024
       - name: nj_001
         description: transactions for buying tickets and generated revenue of the first cinema
       - name: nj_002
