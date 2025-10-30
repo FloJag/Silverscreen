@@ -71,4 +71,6 @@ To bring all together, the final bar chart shows the profitability of each cinem
 None of them are profitable due to the high rental costs of each movie. 
 Cinema 3 has the highest gross margin from all of them.
 
+**My Recommendation:** Reduce the rental costs and start marketing campaigns to attract more visitors and generate more revenue.
+
 <img src="images/Profitability.png" width="800">
